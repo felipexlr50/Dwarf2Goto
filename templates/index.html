@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GoTo Telescope</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='mathUtil.js') }}"></script>
+    <script src="{{ url_for('static', filename='ws.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</head>
+
+<body>
+    <h1>GoTo Telescope</h1>
+    <form action="/" method="POST">
+        <div class="form-group">
+            <label for="dwarf2_ip">Dwarf 2 IP Address:</label>
+            <input type="text" id="dwarf2_ip" name="dwarf2_ip" placeholder="Enter Dwarf 2 IP address">
+        </div>
+        <div class="form-group">
+            <label for="stellarium_ip">Stellarium IP Address:</label>
+            <input type="text" id="stellarium_ip" name="stellarium_ip" placeholder="Enter Stellarium IP address">
+        </div>
+        <div class="form-group">
+            <label for="stellarium_port">Stellarium Port:</label>
+            <input type="text" id="stellarium_port" name="stellarium_port" placeholder="Enter Stellarium port">
+        </div>
+        <div class="form-group">
+            <label for="ra">RA:</label>
+            <input type="text" id="ra" name="ra" placeholder="Enter RA">
+        </div>
+        <div class="form-group">
+            <label for="dec">DEC:</label>
+            <input type="text" id="dec" name="dec" placeholder="Enter DEC">
+        </div>
+        <div class="form-group">
+            <label for="target_name">Target Name:</label>
+            <input type="text" id="target_name" name="target_name">
+        </div>
+        <div class="form-group">
+            <button class="button target-button" type="button" onclick="fetchStellariumData()">Get Target</button>
+        </div>
+        <div class="form-group">
+            <button class="button goto-button"  type="button"  onclick="sendGotoRequest()">GOTO</button>
+        </div>
+    </form>
+
+
+
+</body>
+
+</html>
